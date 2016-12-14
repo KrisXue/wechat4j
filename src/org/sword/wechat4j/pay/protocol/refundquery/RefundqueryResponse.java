@@ -11,33 +11,67 @@ import java.util.Arrays;
  */
 @XmlRootElement(name = "xml")
 public class RefundqueryResponse {
-
+	/*业务结果*/
     private String result_code;
+    /*错误码*/
     private String err_code;
+    /*错误描述*/
     private String err_code_des;
+    /*公众账号ID*/
     private String appid;
+    /*商户号*/
     private String mch_id;
+    /*设备号*/
     private String device_info;
+    /*随机字符串*/
     private String nonce_str;
+    /*签名*/
     private String sign;
+    /*微信订单号*/
     private String transaction_id;
+    /*商户订单号*/
     private String out_trade_no;
+    /*订单金额*/
     private int total_fee;
+    /*货币种类*/
     private String fee_type = "CNY";
+    /*现金支付金额*/
     private int cash_fee;
+    /*退款笔数*/
     private int refund_count;
+    /*商户退款单号*/
     private String[] out_refund_no_$n;
+    /*微信退款单号*/
     private String[] refund_id_$n;
+    /*退款渠道*/
     private String[] refund_channel_$n;
+    /*申请退款金额*/
     private Integer[] refund_fee_$n;
+    /*总代金券退款金额*/
     private Integer[] coupon_refund_fee_$n;
+    /*退款代金券使用数量*/
     private Integer[] coupon_refund_count_$n;
+    /**/
     private String[][] coupon_refund_batch_id_$n_$m;
+    /*退款代金券ID*/
     private String[][] coupon_refund_id_$n_$m;
+    /*单个代金券退款金额*/
     private Integer[][] coupon_refund_fee_$n_$m;
+    /*退款状态*/
     private String[] refund_status_$n;
+    /*退款入账账户*/
+    private String[] refund_recv_accout_$n;
+    
 
-    public String getResult_code() {
+    public String[] getRefund_recv_accout_$n() {
+		return refund_recv_accout_$n;
+	}
+
+	public void setRefund_recv_accout_$n(String[] refund_recv_accout_$n) {
+		this.refund_recv_accout_$n = refund_recv_accout_$n;
+	}
+
+	public String getResult_code() {
         return result_code;
     }
 

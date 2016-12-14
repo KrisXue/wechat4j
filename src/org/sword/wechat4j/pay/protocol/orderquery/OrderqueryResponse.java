@@ -11,34 +11,71 @@ import java.util.Arrays;
  */
 @XmlRootElement(name = "xml")
 public class OrderqueryResponse {
-
+	/*公众账号ID*/
     private String appid;
+    /*商户号*/
     private String mch_id;
+    /*随机字符串*/
     private String nonce_str;
+    /*签名*/
     private String sign;
+    /*业务结果*/
     private String result_code;
+    /*错误代码*/
     private String err_code;
+    /*错误代码描述*/
     private String err_code_des;
     // 以下字段在return_code 和result_code都为SUCCESS的时候有返回
+    /*设备号*/
     private String device_info;
+    /*用户标识*/
     private String openid;
+    /*是否关注公众账号*/
     private String is_subscribe;
+    /*交易类型调用接口提交的交易类型，取值如下：JSAPI，NATIVE，APP，MICROPAY*/
     private String trade_type;
+    /*交易状态
+     *  SUCCESS—支付成功
+		REFUND—转入退款
+		NOTPAY—未支付
+		CLOSED—已关闭
+		REVOKED—已撤销（刷卡支付）
+		USERPAYING--用户支付中
+		PAYERROR--支付失败(其他原因，如银行返回失败)*/
     private String trade_state;
+    /*付款银行*/
     private String bank_type;
+    /*标价金额*/
     private int total_fee;
-    private String fee_type;
+    /*标价币种*/
+    private String fee_type = "CNY";
+    /*现金支付金额*/
     private int cash_fee;
-    private String cash_fee_type;
+    /*现金支付币种*/
+    private String cash_fee_type = "CNY";
+    /*代金券金额*/
     private int coupon_fee;
+    /*代金券使用数量*/
     private int coupon_count;
+    /*代金券类型
+     * CASH--充值代金券 
+	   NO_CASH---非充值代金券
+                 订单使用代金券时有返回（取值：CASH、NO_CASH）。$n为下标,从0开始编号，举例：coupon_type_$0*/
+    private String[] coupon_type_$n;
     private String[] coupon_batch_id_$n;
+    /*代金券ID*/
     private String[] coupon_id_$n;
+    /*单个代金券支付金额*/
     private Integer[] coupon_fee_$n;
+    /*微信支付订单号*/
     private String transaction_id;
+	/*商户订单号*/
     private String out_trade_no;
+    /*附加数据*/
     private String attach;
+    /*支付完成时间*/
     private String time_end;
+    /*交易状态描述*/
     private String trade_state_desc;
 
     public String getAppid() {
@@ -192,7 +229,13 @@ public class OrderqueryResponse {
     public void setCoupon_count(int coupon_count) {
         this.coupon_count = coupon_count;
     }
+    public String[] getCoupon_type_$n() {
+ 		return coupon_type_$n;
+ 	}
 
+ 	public void setCoupon_type_$n(String[] coupon_type_$n) {
+ 		this.coupon_type_$n = coupon_type_$n;
+ 	}
     public String[] getCoupon_batch_id_$n() {
         return coupon_batch_id_$n;
     }

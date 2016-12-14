@@ -12,15 +12,23 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "xml")
 public class RefundqueryRequest {
-
+	/*公众账号ID*/
     private String appid = Config.instance().getAppid();
+    /*商户号*/
     private String mch_id = Config.instance().getMchId();
+    /*设备号*/
     private String device_info;
+    /*随机字符串*/
     private String nonce_str;
+    /*签名*/
     private String sign;
+    /*微信订单号*/
     private String transaction_id;
+    /*商户订单号*/
     private String out_trade_no;
+    /*商户退款单号*/
     private String out_refund_no;
+    /*微信退款单号*/
     private String refund_id;
 
     public String getAppid() {

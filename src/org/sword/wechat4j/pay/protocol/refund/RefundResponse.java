@@ -10,27 +10,49 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "xml")
 public class RefundResponse {
-
+	/*业务结果*/
     private String result_code;
+    /*错误代码*/
     private String err_code;
+    /*错误代码描述*/
     private String err_code_des;
+    /*公众账号ID*/
     private String appid;
+    /*商户号*/
     private String mch_id;
+    /*设备号*/
     private String device_info;
+    /*随机字符串*/
     private String nonce_str;
+    /*签名*/
     private String sign;
+    /*微信订单号*/
     private String transaction_id;
+    /*商户订单号*/
     private String out_trade_no;
+    /*商户退款单号*/
     private String out_refund_no;
+    /*微信退款单号*/
     private String refund_id;
+    /*退款渠道
+     *  ORIGINAL—原路退款
+		BALANCE—退回到余额*/
     private String refund_channel;
+    /*退款金额*/
     private int refund_fee;
+    /*标价金额*/
     private int total_fee;
+    /*标价币种*/
     private String fee_type = "CNY";
+    /*现金支付金额*/
     private int cash_fee;
+    /*现金退款金额*/
     private int cash_refund_fee;
+    /*代金券退款总金额*/
     private int coupon_refund_fee;
+    /*退款代金券使用数量*/
     private int coupon_refund_count;
+    /*退款代金券ID*/
     private int coupon_refund_id;
 
     public String getResult_code() {

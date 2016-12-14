@@ -12,13 +12,19 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "xml")
 public class DownloadbillRequest {
-
+	/*公众账号ID*/
     private String appid = Config.instance().getAppid();
+    /*商户号*/
     private String mch_id = Config.instance().getMchId();
+    /*商户号*/
     private String device_info;
+    /*随机字符串*/
     private String nonce_str;
+    /*签名*/
     private String sign;
+    /*对账单日期*/
     private String bill_date;
+    /*账单类型*/
     private String bill_type;
 
     public String getAppid() {

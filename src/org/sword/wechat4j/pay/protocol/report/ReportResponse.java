@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "xml")
 public class ReportResponse {
-
+	/*业务结果*/
     private String result_code;
 
     public String getResult_code() {

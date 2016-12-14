@@ -10,18 +10,29 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "xml")
 public class UnifiedorderResponse {
-
+	/*以下字段在return_code为SUCCESS的时候有返回*/
+	/*公众账号ID*/
     private String appid;
+    /*商户号*/
     private String mch_id;
+    /*设备号*/
     private String device_info;
+    /*随机字符串*/
     private String nonce_str;
+    /*签名*/
     private String sign;
+    /*业务结果*/
     private String result_code;
+    /*错误代码*/
     private String err_code;
+    /*错误代码描述*/
     private String err_code_des;
     /*以下字段在return_code 和result_code都为SUCCESS的时候有返回*/
+    /*交易类型*/
     private String trade_type;
+    /*预支付交易会话标识*/
     private String prepay_id;
+    /*二维码链接*/
     private String code_url;
 
     public String getAppid() {
